@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  url: MyString
+  password: MyString
+  username: MyString
+  xmlrpc_path: MyString
+  ssl: false
+  ssl_port: MyString
+
+two:
+  name: MyString
+  url: MyString
+  password: MyString
+  username: MyString
+  xmlrpc_path: MyString
+  ssl: false
+  ssl_port: MyString

@@ -1,26 +1,21 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+<div class="wrap-box" style="height: calc(100vh - 50px)">
+  <div class="col-md-6 centered">
+    <div class="card">
+      <div class="card-body fluffy-form">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <h3 class="fluffy-form-title">
+            <i class="icon ion-log-in"></i>
+            Log in</h3>
+          <label>Email</label>
+          <%= f.email_field :email, class: "form-control", autofocus: true %>
+          <label>Password</label>
+          <%= f.password_field :password, class: "form-control", autocomplete: "off" %>
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+          <%= f.submit "Log in", class: "btn-block red" %>
+        <% end %>
+        <%= render "devise/shared/links" %>
+      </div>
     </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
   </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

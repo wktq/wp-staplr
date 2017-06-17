@@ -1,0 +1,47 @@
+$set-prefix: '' , -moz- , -webkit-, -o-;
+
+@mixin setPrefix($name, $value) {
+    @each $prefix in $set-prefix {
+        #{$prefix}#{$name}: $value;
+    }
+}
+
+.dropdown {
+  position: relative;
+
+  &:hover .dropdown-child {
+    opacity: 1;
+    display: block;
+    margin-top: 0px;
+  }
+}
+
+.dropdown .dropdown-child {
+  position: absolute;
+  min-height: 20px;
+  background-color: #fff;
+  top: 0;
+  opacity: 0;
+  margin-top: -10px;
+  @include setPrefix(transition, .3s);
+  @include setPrefix(box-shadow, 0px 0px 3px rgba(0,0,0,.2));
+
+  .dropdown-child-list {
+    list-style: none;
+    padding: 0 32px;
+    background-color: #fff;
+    line-height: 36px;
+    width: 160px;
+    white-space: nowrap;
+    @include setPrefix(transition, .3s);
+
+    &:hover {
+      background-color: rgba(0,0,0,.06);
+    }
+  }
+
+  &:hover {
+    opacity: 1;
+    display: block;
+  }
+}

@@ -1,0 +1,72 @@
+<header class="header fixed">
+  <div class="header-left" style="display: inline-block">
+    <%= link_to root_path do %>
+      <img class="logo-image" src="https://i.imgur.com/sAvD3k5.png" alt="">
+      <span class="logo">Staplr</span>
+      <span class="logo-sub">
+        <span style="color: #0571A0">Word</span>Press
+      </span>
+    <% end %>
+  </div>
+  <div class="header-right">
+    <div class="header-list">
+      <a href="https://github.com/wktq/fluffy" target="_blank">
+        <i class="icon ion-android-notifications"></i>
+      </a>
+    </div>
+    <div class="header-list dropdown">
+      <a href="https://github.com/wktq/fluffy" target="_blank">
+        <i class="icon ion-person"></i>
+      </a>
+      <div class="dropdown-child" style="top: 50px; right: 0px;">
+        <%= link_to admin_path, class: '' do %>
+          <li class="dropdown-child-list">
+              <span class="hidden-xs">&nbsp;Dashboard</span>
+          </li>
+        <% end %>
+        <%= link_to destroy_user_session_path, method: :delete, style: "color: red", class: '' do %>
+          <li class="dropdown-child-list">
+            <i class="ion-log-out"></i>
+            <span class="hidden-xs">&nbsp;Logout</span>
+          </li>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</header>
+
+<style media="screen">
+  .logo {
+    font-family: 'Palanquin Dark';
+    letter-spacing: 1px;
+  }
+
+  .logo-image {
+    display: inline-block;
+    margin: -12px 2px 0 0;
+  }
+
+  .logo-sub {
+    font-size: 14px;
+    margin-left: 6px;
+    display: inline-block;
+    font-family: 'Cormorant SC', serif;
+    color: #464646;
+  }
+
+  .header-list {
+    line-height: 50px;
+    height: 50px;
+    padding: 0 16px;
+    display: inline-block;
+  }
+
+  .header-right .header-list {
+    float: right;
+  }
+
+  .header-left .header-list {
+    float: left;
+  }
+
+</style>

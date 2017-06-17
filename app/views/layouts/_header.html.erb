@@ -1,0 +1,62 @@
+<header class="header fixed">
+  <div class="header-left" style="display: inline-block">
+    <%= link_to root_path do %>
+      <img class="logo-image" src="https://i.imgur.com/sAvD3k5.png" alt="">
+      <span class="logo">Staplr</span>
+      <span class="logo-sub">
+        <span style="color: #0571A0">Word</span>Press
+      </span>
+    <% end %>
+  </div>
+  <div class="header-content">
+    <ul class="header-menu">
+      <li>TOP</li>
+      <li>ABOUT</li>
+      <li>FEATURES</li>
+      <li>FAQ</li>
+      <li>SUPPORT</li>
+    </ul>
+  </div>
+  <div class="header-right">
+    <% if user_signed_in? %>
+      <%= link_to admin_path, class: "btn green" do %>
+        <i class="ion-ios-speedometer"></i>
+        <span class="hidden-xs">&nbsp;Go Console</span>
+      <% end %>
+      <%= link_to destroy_user_session_path, method: :delete, class: 'btn red' do %>
+        <i class="ion-log-out"></i>
+        <span class="hidden-xs">&nbsp;Logout</span>
+      <% end %>
+    <% else %>
+      <%= link_to new_user_registration_path, class: "btn blue" do %>
+        <i class="ion-person-add"></i>
+        <span class="hidden-xs">&nbsp;Sign up</span>
+      <% end %>
+      <%= link_to new_user_session_path, class: "btn red" do %>
+        <i class="ion-log-in"></i>
+        <span>&nbsp;Log in</span>
+      <% end %>
+    <% end %>
+  </div>
+</header>
+
+<style media="screen">
+  .logo {
+    font-family: 'Palanquin Dark';
+    letter-spacing: 1px;
+  }
+
+  .logo-image {
+    display: inline-block;
+    margin: -12px 2px 0 0;
+  }
+
+  .logo-sub {
+    font-size: 14px;
+    margin-left: 6px;
+    display: inline-block;
+    font-family: 'Cormorant SC', serif;
+    color: #464646;
+  }
+
+</style>
