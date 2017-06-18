@@ -1,0 +1,28 @@
+.NotificationList {
+  .NotificationList_item {
+    width: 200px;
+    font-size: 0;
+    display: flex;
+
+    .NotificationList_item-avatar {
+      display: inline-block;
+      width: 60px;
+      padding: 5px;
+
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: scale-down;
+      }
+    }
+
+    .NotificationList_item-message {
+      display: inline-block;
+      width: 70%;
+      font-size: 12px;
+      text-align: left;
+      padding: 0 8px;
+    }
+  }
+}

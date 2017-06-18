@@ -3,4 +3,12 @@ class Admin::HomeController < ApplicationController
 
   def top
   end
+
+  def new_post
+    #code
+  end
+
+  def settings
+    #code
+  end
 end

@@ -9,19 +9,45 @@
     <% end %>
   </div>
   <div class="header-right">
-    <div class="header-list">
+    <div class="header-list dropdown">
       <a href="https://github.com/wktq/fluffy" target="_blank">
         <i class="icon ion-android-notifications"></i>
       </a>
+      <div class="dropdown-child NotificationList" style="top: 50px;">
+        <%= link_to admin_path, class: '' do %>
+          <li class="NotificationList_item">
+            <span class="NotificationList_item-avatar">
+              <img src="https://s3.amazonaws.com/uifaces/faces/twitter/sauro/128.jpg">
+            </span>
+            <span class="NotificationList_item-message">Hello Admin User</span>
+          </li>
+
+        <% end %>
+        <%= link_to destroy_user_session_path, class: '' do %>
+          <li class="dropdown-child-list" style="text-align: center">
+            <span class="hidden-xs">&nbsp;See All</span>
+          </li>
+        <% end %>
+      </div>
     </div>
     <div class="header-list dropdown">
       <a href="https://github.com/wktq/fluffy" target="_blank">
         <i class="icon ion-person"></i>
       </a>
-      <div class="dropdown-child" style="top: 50px; right: 0px;">
+      <div class="dropdown-child" style="top: 50px;">
         <%= link_to admin_path, class: '' do %>
           <li class="dropdown-child-list">
               <span class="hidden-xs">&nbsp;Dashboard</span>
+          </li>
+        <% end %>
+        <%= link_to admin_sites_path, class: '' do %>
+          <li class="dropdown-child-list">
+              <span class="hidden-xs">&nbsp;My Sites</span>
+          </li>
+        <% end %>
+        <%= link_to admin_settings_path, class: '' do %>
+          <li class="dropdown-child-list">
+              <span class="hidden-xs">&nbsp;Settings</span>
           </li>
         <% end %>
         <%= link_to destroy_user_session_path, method: :delete, style: "color: red", class: '' do %>
@@ -57,8 +83,9 @@
   .header-list {
     line-height: 50px;
     height: 50px;
-    padding: 0 16px;
+    padding: 0 8px;
     display: inline-block;
+    text-align: center;
   }
 
   .header-right .header-list {

@@ -19,7 +19,10 @@
     <% else %>
       <%= render 'layouts/header' %>
     <% end %>
-    <div class="main" style="padding-top: 50px;">
+    <div class="main" style="padding: 12px; margin-top: 50px; <%= 'margin-left: 240px;' if user_signed_in? && (controller_path.include?('admin')) %>">
+      <% if user_signed_in? && (controller_path.include?('admin')) %>
+        <%= render 'layouts/admin_sidebar' %>
+      <% end %>
       <%= yield %>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js" charset="utf-8"></script>

@@ -1,0 +1,11 @@
+<div class="fluffy-form">
+  <%= form_for(@site) do |f| %>
+    <%= f.text_field :name, required: true, class: 'form-control'%>
+    <%= f.url_field :url, required: true, class: 'form-control'%>
+    <%= f.text_field :username, required: true, class: 'form-control'%>
+    <%= f.password_field :password, required: true, class: 'form-control'%>
+    <%= f.text_field :xmlrpc_path, class: 'form-control'%>
+    <%= f.check_box :ssl, {}, true, false %>
+    <%= f.text_field :ssl_port, required: true, class: 'form-control'%>
+  <% end %>
+</div>
