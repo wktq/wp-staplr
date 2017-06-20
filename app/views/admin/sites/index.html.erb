@@ -1,1 +1,25 @@
+<% @sites.each do |site| %>
+<div class="col-md-4">
+  <div class="card">
+    <div class="card-head">
+      <%= site.name %>
+    </div>
+    <div class="card-body">
+      <p>
+        Site URL: <%= site.url %>
+      </p>
+      <p>
+        Admin username: <%= site.username %>
+      </p>
+    </div>
+    <div class="card-foot">
+      <button class="btn card-foot-btn purple">
+        <i class="icon ion-gear-a"></i>Settings</button>
+      <button class="btn card-foot-btn red">
+        <i class="icon ion-trash-a"></i>Delete</button>
+    </div>
+  </div>
+</div>
+<% end %>
+
 <%= link_to "Add Site", new_admin_site_path, class: "btn blue" %>
