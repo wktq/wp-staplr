@@ -28,12 +28,12 @@ class Admin::SitesController < ApplicationController
     @site.raw_info = wp.getOptions
     @site.name = wp.getOptions['blog_title']['value']
 
-    # if @site.save
-    #   flash[:success] = "New WP Site Added."
-    #   redirect_to admin_sites_path
-    # else
-    #   render :new
-    # end
+    if @site.save
+      flash[:success] = "New WP Site Added."
+      redirect_to admin_sites_path
+    else
+      render :new
+    end
   end
 
   private
