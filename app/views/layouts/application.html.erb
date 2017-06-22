@@ -4,16 +4,21 @@
     <title>WpStaplr</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://rawgit.com/wktq/fluffy/master/dist/fluffy.css">
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link href="https://fonts.googleapis.com/css?family=Palanquin+Dark|Bentham|Cormorant+SC:600" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
   </head>
 
   <body>
+    <%= javascript_include_tag 'application' %>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.js"
+      integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+      crossorigin="anonymous"></script>
+      
     <% if user_signed_in? && (controller_path.include?('admin')) %>
       <%= render 'layouts/admin_header' %>
     <% else %>
@@ -25,7 +30,10 @@
       <% end %>
       <%= yield %>
     </div>
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js" charset="utf-8"></script>
+    <script src="https://rawgit.com/wktq/fluffy/master/app.js" charset="utf-8"></script>
     <!-- Initialize Swiper -->
     <script>
     var swiper = new Swiper('.swiper-container', {

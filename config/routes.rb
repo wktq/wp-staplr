@@ -3,9 +3,20 @@ Rails.application.routes.draw do
   root 'pages#top'
   namespace :admin do
     get '/', to: 'home#top'
-    get :new_post, to: 'home#new_post'
     get :settings, to: 'home#settings'
-    resources :sites
+    get 'posts/new', to: 'sites#new_post'
+
     resources :users
+    resources :sites do
+      get :posts, to: 'sites#posts'
+      get :users, to: 'sites#users'
+    end
   end
+
+  namespace :api do
+    resources :sites, :only => [:index] do
+      get 'posts/new'
+    end
+  end
+
 end

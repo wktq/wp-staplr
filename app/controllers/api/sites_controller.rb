@@ -1,39 +1,8 @@
-class Admin::SitesController < ApplicationController
+class Api::PostsController < ApplicationController
   before_action :authenticate_user!
 
-  def index
-    @sites = current_user.sites
-  end
-
   def new
-    @site = current_user.sites.build
-  end
-
-  def show
-  end
-
-  def create
-    @site = current_user.sites.build site_params
-
-    begin
-      wp = Rubypress::Client.new(:host => @site.url,
-                                 :username => @site.username,
-                                 :password => @site.password,
-                                 :retry_timeouts => true)
-    rescue => e
-      # p e.message
-    end
-
-
-    @site.raw_info = wp.getOptions
-    @site.name = wp.getOptions['blog_title']['value']
-
-    if @site.save
-      flash[:success] = "New WP Site Added."
-      redirect_to admin_sites_path
-    else
-      render :new
-    end
+    render [0,1,2,3,4,5]
   end
 
   def edit
@@ -75,10 +44,6 @@ class Admin::SitesController < ApplicationController
                                :retry_timeouts => true)
 
     @users = wp.getUsers
-  end
-
-  def new_post
-    @site = Site.find_by(id: params[:site_id])
   end
 
   private

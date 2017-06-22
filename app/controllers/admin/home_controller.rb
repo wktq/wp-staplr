@@ -11,4 +11,8 @@ class Admin::HomeController < ApplicationController
   def settings
     #code
   end
+
+  def users
+    #code
+  end
 end

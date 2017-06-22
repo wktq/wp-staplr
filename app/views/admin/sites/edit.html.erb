@@ -1,7 +1,7 @@
 <div class="col-md-6 col-md-offset-3">
   <div class="fluffy-form">
-    <h3 class="fluffy-form-title">Add Your WordPress Site</h3>
-    <%= form_for [:admin, @site] do |f| %>
+    <h3 class="fluffy-form-title">Confing Your WordPress Site</h3>
+    <%= form_for @site, url: edit_admin_site_path(@site), html: {method: "patch"} do |f| %>
       <label for="">Site URL *</label>
       <%= f.text_field :url, required: true, class: 'form-control', placeholder: 'http://yoursite.com' %>
       <label for="">Site username *</label>

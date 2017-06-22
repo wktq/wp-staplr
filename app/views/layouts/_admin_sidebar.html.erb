@@ -19,9 +19,9 @@
       <i class="icon ion-earth"></i>My Sites
     <% end %>
     <%= link_to admin_users_path, class: "list-item thick #{'active' if request.path == admin_users_path}" do %>
-      <i class="icon ion-person"></i>Users
+      <i class="icon ion-person"></i>All Users
     <% end %>
-    <%= link_to admin_new_post_path, class: "list-item thick #{'active' if request.path == admin_new_post_path}" do %>
+    <%= link_to admin_posts_new_path, class: "list-item thick #{'active' if request.path == admin_posts_new_path}" do %>
       <i class="icon ion-android-create"></i>New Post
     <% end %>
     <%= link_to admin_settings_path, class: "list-item thick #{'active' if request.path == admin_settings_path}" do %>

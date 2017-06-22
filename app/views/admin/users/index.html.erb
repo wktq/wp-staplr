@@ -1,0 +1,24 @@
+<div class="card">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>username</th>
+        <th>email</th>
+        <th>role</th>
+        <th>registered_date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @all_users.each do |users| %>
+        <% users.each do |user| %>
+          <tr>
+            <td data-title="username"><%= user['username'] %></td>
+            <td data-title="email"><%= user['email'] %></td>
+            <td data-title="role"><%= user['roles'] %></td>
+            <td data-title="registered"><%= user['registered'].to_a %></td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
